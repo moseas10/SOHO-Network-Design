@@ -6,7 +6,7 @@ Project Goal: Design and implement a small branch network (separate from HQ) usi
 2. Devices and Equipment
 3. Topology
 4. IP addressing & VLAN plan
-5. Step-by-step implementation -Design Topology -Configure VLANs -Configure Wireless Networks -Configure Wireless Networks -Configure Access & Trunk on Switch -Configure Inter-VLAN routing (router-on-a-stick) -Configure DHCP on router -Change all device interfaces to DHCP -Test for connectivity.
+5.Implementation -Design Topology -Configure VLANs -Configure Wireless Networks -Configure Wireless Networks -Configure Access & Trunk on Switch -Configure Inter-VLAN routing (router-on-a-stick) -Configure DHCP on router -Change all device interfaces to DHCP -Test for connectivity.
 6. Verification commands & expected outputs
 7. Troubleshooting tips
 
@@ -80,6 +80,21 @@ Configure all wired and wireless devices to obtain IP addresses automatically vi
 
 Action 8 — Test for Connectivity
 Verify connectivity by testing communication within the same VLAN and across different VLANs. Confirm that devices receive correct IP addresses and can reach their respective gateways and other departments.
+
+**VERIFICATION COMMANDS AND EXPECTED OUTCOMES**
+
+Switch (Main-Switch)
+show vlan brief — confirms VLANs and ports.
+show interfaces trunk — shows trunk status and allowed VLANs.
+
+Router (Core-Router)
+show ip interface brief — see subinterfaces and IPs.
+show ip route — verify connected networks (you should see 192.168.1.0/26, 192.168.1.64/26, 192.168.1.128/26).
+show running-config — full configuration.
+
+Expected to:
+ping across VLANs returns replies.
+DHCP clients receive addresses in the correct subnet (e.g., Admin client 192.168.1.11)
 
 
 
