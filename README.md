@@ -39,7 +39,7 @@ Laptops, Tablet and Phones for each department
 
 
 **IP ADDRESSING & VLAN PLAN**
-We'll split 192.168.1.0/24 into four /26 subnets (62 hosts each) — three used for departments and one reserved:
+- We'll split 192.168.1.0/24 into four /26 subnets (62 hosts each) — three used for departments and one reserved:
 
 VLAN 10 — Admin
 VLAN ID: 10
