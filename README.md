@@ -97,26 +97,26 @@ Action 8 — Test for Connectivity
 **VERIFICATION COMMANDS AND EXPECTED OUTCOMES**
 
 Switch (Main-Switch)
-show vlan brief — confirms VLANs and ports.
-show interfaces trunk — shows trunk status and allowed VLANs.
+- show vlan brief (confirms VLANs and ports).
+- show interfaces trunk (shows trunk status and allowed VLANs).
 
 Router (Core-Router)
-show ip interface brief — see subinterfaces and IPs.
-show ip route — verify connected networks (you should see 192.168.1.0/26, 192.168.1.64/26, 192.168.1.128/26).
-show running-config — full configuration.
+- show ip interface brief (see subinterfaces and IPs).
+- show ip route (verify connected networks (you should see 192.168.1.0/26, 192.168.1.64/26, 192.168.1.128/26)).
+- show running-config (full configuration).
 
-Expected to:
-ping across VLANs returns replies.
-DHCP clients receive addresses in the correct subnet (e.g., Admin client 192.168.1.11)
+Expected to
+- ping across VLANs returns replies.
+- DHCP clients receive addresses in the correct subnet (e.g., Admin client 192.168.1.11)
 
 
 
 **TROUBLESHOOTING TIPS**
 
-If hosts don't get DHCP addresses: verify ip dhcp pool and ip dhcp excluded-address ranges, ensure no IP overlap.
-If inter-VLAN traffic fails: check trunk is up (show interfaces trunk) and router subinterfaces exist with correct encapsulation dot1Q IDs.
-If wireless clients can't reach network: Confirm AP is physically connected to the correct switch access port and that that port is in the correct VLAN.
-Use show arp on router to verify MAC-to-IP mappings.
+- If hosts don't get DHCP addresses: verify ip dhcp pool and ip dhcp excluded-address ranges, ensure no IP overlap.
+- If inter-VLAN traffic fails: check trunk is up (show interfaces trunk) and router subinterfaces exist with correct encapsulation dot1Q IDs.
+- If wireless clients can't reach network: Confirm AP is physically connected to the correct switch access port and that that port is in the correct VLAN.
+- Use show arp on router to verify MAC-to-IP mappings.
 
 
 
